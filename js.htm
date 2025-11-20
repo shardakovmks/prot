@@ -3,45 +3,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="style.css">
-    <title>Протезы</title>
+    <title>РџСЂРѕС‚РµР·С‹</title>
     
 </head>
 <body>
-    <a href="index.htm"> <img src="https://cdn-icons-png.flaticon.com/512/64/64817.png" width="40" height="40" alt="Вернутся на главную"></a>
+    <a href="index.htm"> <img src="https://cdn-icons-png.flaticon.com/512/64/64817.png" width="40" height="40" alt="Р’РµСЂРЅСѓС‚СЃСЏ РЅР° РіР»Р°РІРЅСѓСЋ"></a>
     <div class="container">
         <div class="section">
-            <h3>Информация о протезах</h3>
+            <h3>РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС‚РµР·Р°С…</h3>
             <select id="prosthesisMenu" onchange="showInfo()">
-                <option value="">Выберите тип протеза</option>
-                <option value="bionic">Бионические протезы</option>
-                <option value="cosmetic">Косметические протезы</option>
-                <option value="sports">Спортивные протезы</option>
+                <option value="">Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї РїСЂРѕС‚РµР·Р°</option>
+                <option value="bionic">Р‘РёРѕРЅРёС‡РµСЃРєРёРµ РїСЂРѕС‚РµР·С‹</option>
+                <option value="cosmetic">РљРѕСЃРјРµС‚РёС‡РµСЃРєРёРµ РїСЂРѕС‚РµР·С‹</option>
+                <option value="sports">РЎРїРѕСЂС‚РёРІРЅС‹Рµ РїСЂРѕС‚РµР·С‹</option>
             </select>
             <div id="output"></div>
         </div>
 
 
         <div class="section">
-            <h3>Расчет стоимости</h3>
-            <input type="number" id="price" placeholder="Базовая цена">
-            <button onclick="calculatePrice()">Рассчитать</button>
+            <h3>Р Р°СЃС‡РµС‚ СЃС‚РѕРёРјРѕСЃС‚Рё</h3>
+            <input type="number" id="price" placeholder="Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°">
+            <button onclick="calculatePrice()">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ</button>
             <p id="result"></p>
-            <p>Текущая дата: <span id="date"></span></p>
+            <p>РўРµРєСѓС‰Р°СЏ РґР°С‚Р°: <span id="date"></span></p>
         </div>
 
 
         <div class="section">
-            <h3>Статистика пациентов</h3>
-            <input type="text" id="patientName" placeholder="Имя пациента">
-            <input type="number" id="therapyScore" placeholder="Балл реабилитации">
-            <button onclick="addPatient()">Добавить</button>
-            <button onclick="calculateStats()">Рассчитать статистику</button>
+            <h3>РЎС‚Р°С‚РёСЃС‚РёРєР° РїР°С†РёРµРЅС‚РѕРІ</h3>
+            <input type="text" id="patientName" placeholder="РРјСЏ РїР°С†РёРµРЅС‚Р°">
+            <input type="number" id="therapyScore" placeholder="Р‘Р°Р»Р» СЂРµР°Р±РёР»РёС‚Р°С†РёРё">
+            <button onclick="addPatient()">Р”РѕР±Р°РІРёС‚СЊ</button>
+            <button onclick="calculateStats()">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚Р°С‚РёСЃС‚РёРєСѓ</button>
             
             <table id="patientsTable">
                 <tr>
-                    <th>Имя</th>
-                    <th>Балл</th>
+                    <th>РРјСЏ</th>
+                    <th>Р‘Р°Р»Р»</th>
                 </tr>
             </table>
             
@@ -55,9 +56,9 @@
             const menu = document.getElementById('prosthesisMenu');
             const output = document.getElementById('output');
             const messages = {
-                bionic: "Бионические протезы с электронным управлением",
-                cosmetic: "Косметические протезы с натуральным видом",
-                sports: "Специализированные протезы для спорта"
+                bionic: "Р‘РёРѕРЅРёС‡РµСЃРєРёРµ РїСЂРѕС‚РµР·С‹ СЃ СЌР»РµРєС‚СЂРѕРЅРЅС‹Рј СѓРїСЂР°РІР»РµРЅРёРµРј",
+                cosmetic: "РљРѕСЃРјРµС‚РёС‡РµСЃРєРёРµ РїСЂРѕС‚РµР·С‹ СЃ РЅР°С‚СѓСЂР°Р»СЊРЅС‹Рј РІРёРґРѕРј",
+                sports: "РЎРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Рµ РїСЂРѕС‚РµР·С‹ РґР»СЏ СЃРїРѕСЂС‚Р°"
             };
             output.innerHTML = messages[menu.value] || "";
         }
@@ -68,14 +69,14 @@
             if (basePrice > 0) {
                 const finalPrice = Math.round(basePrice * 1.2); // Math + 20%
                 document.getElementById('result').textContent = 
-                    `Итоговая цена: ${finalPrice} руб.`;
+                    `РС‚РѕРіРѕРІР°СЏ С†РµРЅР°: ${finalPrice} СЂСѓР±.`;
             }
         }
 
 
         const now = new Date();
         document.getElementById('date').textContent = 
-            now.toLocaleDateString('ru-RU'); // Формат даты
+            now.toLocaleDateString('ru-RU'); // Р¤РѕСЂРјР°С‚ РґР°С‚С‹
 
         let patients = [];
 
@@ -86,7 +87,7 @@
             if (name && score >= 0) {
                 patients.push({ name, score });
                 updateTable();
-                // Очистка полей ввода
+                // РћС‡РёСЃС‚РєР° РїРѕР»РµР№ РІРІРѕРґР°
                 document.getElementById('patientName').value = '';
                 document.getElementById('therapyScore').value = '';
             }
@@ -112,9 +113,9 @@
             const averageScore = (totalScore / totalPatients).toFixed(2);
             
             document.getElementById('stats').innerHTML = `
-                <p>Всего пациентов: ${totalPatients}</p>
-                <p>Сумма баллов: ${totalScore}</p>
-                <p>Средний балл: ${averageScore}</p>
+                <p>Р’СЃРµРіРѕ РїР°С†РёРµРЅС‚РѕРІ: ${totalPatients}</p>
+                <p>РЎСѓРјРјР° Р±Р°Р»Р»РѕРІ: ${totalScore}</p>
+                <p>РЎСЂРµРґРЅРёР№ Р±Р°Р»Р»: ${averageScore}</p>
             `;
         }
     </script>
